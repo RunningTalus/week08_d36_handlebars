@@ -12,10 +12,16 @@ $(document).on('ready', function() {
 	var weatherTemplate = $('#weather-template');
 	var templateText = weatherTemplate.html();
 
-	console.log(templateText);
+	// console.log(templateText);
 		// <div id="weather">
 		// 	<b>Day:</b> {{day}}
 		// 	<b>Temperature</b> {{temp}}
 		// </div>
+	
+	var renderWeather = Handlebars.compile(templateText);
 
+	for (var i=0; i<forecasts.length; i++){
+		var outputHtml = renderWeather(forecasts[i]);
+		$('#forecasts').append(outputHtml);
+	}
 });
