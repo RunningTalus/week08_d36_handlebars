@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Untitled</title>
+	<title>Intro to Handlebars.js</title>
 	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
@@ -21,6 +21,9 @@
 	<div id="weather">
 		<b>Day:</b> {{day}}
 		<b>Temperature</b> {{temp}}
+		{{#if hot}}
+		<p class="alert alert-danger">Scorcher!</p>
+		{{/if}}
 	</div>
 	</script>
 	

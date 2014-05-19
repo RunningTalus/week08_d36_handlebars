@@ -19,9 +19,15 @@ $(document).on('ready', function() {
 		// </div>
 	
 	var renderWeather = Handlebars.compile(templateText);
+	// var outputHtml = renderWeather(forecasts[0]);
 
 	for (var i=0; i<forecasts.length; i++){
+
+		forecasts[i].hot = forecasts[i].temp >= 85;
+		
 		var outputHtml = renderWeather(forecasts[i]);
+		
 		$('#forecasts').append(outputHtml);
 	}
+	
 });
